@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cha Physical Therapy | All design previews</title>
+  <style>
+    :root {
+      --white: #ffffff;
+      --paper: #f7f5f2;
+      --ink: #1e1b18;
+      --soft: #7a706a;
+      --line: #e7e3de;
+      --clay: #b8826b;
+      --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--white); color: var(--ink); font-family: var(--font); }
+    header { padding: 42px 5vw 36px; border-bottom: 1px solid var(--line); }
+    .wordmark { width: 172px; height: auto; }
+    main { padding: clamp(70px, 9vw, 132px) 5vw 120px; }
+    .eyebrow { margin: 0 0 24px; color: var(--soft); font-size: 11px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; }
+    h1 { max-width: 11ch; margin: 0; font-size: clamp(56px, 8vw, 118px); line-height: .93; letter-spacing: -.065em; }
+    h1 span { color: var(--clay); }
+    .intro { max-width: 54ch; margin: 34px 0 0; color: var(--soft); font-size: 18px; line-height: 1.65; }
+    .home-link { display: inline-flex; margin-top: 34px; padding: 14px 22px; border-radius: 999px; background: var(--ink); color: var(--white); font-size: 13px; text-decoration: none; }
+    section { margin-top: clamp(82px, 10vw, 140px); }
+    h2 { margin: 0 0 32px; font-size: 12px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+    .grid a { min-height: 94px; padding: 24px 18px 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 19px; font-weight: 500; letter-spacing: -.02em; text-decoration: none; }
+    .grid a::after { content: "↗"; color: var(--clay); font-weight: 400; }
+    .grid a:hover { color: var(--clay); }
+    footer { padding: 34px 5vw; border-top: 1px solid var(--line); color: var(--soft); font-size: 12px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 600px) { header, main, footer { padding-left: 22px; padding-right: 22px; } .grid { grid-template-columns: 1fr; } h1 { font-size: clamp(50px, 15vw, 72px); } }
+  </style>
+<link rel="stylesheet" href="./preview.css" />
+</head>
+<body>
+  <header>
+    <img class="wordmark" src="https://www.chaphysicaltherapy.com/static/cha-design/assets/cha-wordmark.png" alt="Cha Physical Therapy" />
+  </header>
+  <main>
+    <p class="eyebrow">Complete website preview</p>
+    <h1>Every page.<br /><span>One system.</span></h1>
+    <p class="intro">The current website content, shown with the cleaner white, Helvetica, and clay-accent design from the approved homepage. This version opens directly from the files, so every page stays available without a local server.</p>
+    <a class="home-link" href="https://www.chaphysicaltherapy.com/" rel="external">Open the homepage</a>
+
+    <section>
+      <h2>Main pages</h2>
+      <div class="grid">
+        <a href="treatments.html">Treatments</a><a href="pain.html">Pain</a><a href="packages.html">Programs</a>
+        <a href="who-we-treat.html">Who we treat</a><a href="about.html">Team</a><a href="dr-cha.html">Dr. Cha</a>
+        <a href="method.html">The Cha Method</a><a href="research.html">Evidence</a><a href="pricing.html">Pricing</a>
+        <a href="book.html">Book a session</a><a href="visit.html">Visit</a><a href="providers.html">For providers</a>
+        <a href="in-person-care.html">Why the space matters</a><a href="our-space.html">Our space</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Treatments and programs</h2>
+      <div class="grid">
+        <a href="schroth.html">Schroth Method</a><a href="scoliosis.html">Scoliosis</a><a href="pelvic-floor.html">Pelvic floor</a>
+        <a href="pelvic-pain.html">Pelvic pain</a><a href="postpartum.html">Postpartum</a><a href="acupuncture.html">Acupuncture</a>
+        <a href="manual-therapy.html">Manual therapy</a><a href="pain-management.html">Pain management</a><a href="postural-restoration.html">Postural restoration</a>
+        <a href="tmj.html">TMJ care</a><a href="botox.html">Botox and fillers</a><a href="hypermobility.html">Hypermobility</a>
+        <a href="post-surgical.html">Post-surgical rehab</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pain pages</h2>
+      <div class="grid">
+        <a href="low-back-pain.html">Low back pain</a><a href="neck-pain.html">Neck pain</a><a href="shoulder-pain.html">Shoulder pain</a>
+        <a href="knee-pain.html">Knee pain</a><a href="hip-pain.html">Hip pain</a><a href="elbow-pain.html">Elbow pain</a>
+        <a href="sciatica.html">Sciatica</a><a href="plantar-fasciitis.html">Plantar fasciitis</a>
+      </div>
+    </section>
+  </main>
+  <footer>Cha Physical Therapy · NoMad, New York · Local design preview</footer>
+<script src="./preview.js" defer></script>
+</body>
+</html>
