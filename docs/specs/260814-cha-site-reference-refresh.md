@@ -194,7 +194,7 @@ Every footer has a white background and includes:
 - Cha Physical Therapy
 - 16 W 32nd St, Suite 1007, NoMad, New York 10001
 - Monday-Friday, 9am-7pm
-- `(646) 979-9769` linked with `tel:+16469799769`
+- `(646) 718-6201` linked with `tel:+16467186201`
 - Privacy and HIPAA as real links
 - `© 2026`
 
@@ -203,8 +203,8 @@ Both Privacy and HIPAA link to the verified live policy at
 Therapy Privacy Policy on 2026-08-14; `/privacy` and `/hipaa` returned 404 and must not be used.
 
 The boss-supplied homepage uses `(646) 979-9769`, while the live pricing page showed
-`(646) 718-6201` on 2026-08-14. This demo must reflect the boss-supplied number, but the mismatch is a
-release blocker until the business owner confirms which number production should publish.
+`(646) 718-6201` on 2026-08-14. Per the product owner's decision, this demo keeps the currently live
+number and does not publish the boss-supplied replacement yet.
 
 ### 5. Responsive layout
 
@@ -571,12 +571,10 @@ database, user data, payment state, or infrastructure rollback is required.
 
 Before release acceptance, verify these drift-prone facts rather than guessing:
 
-1. The boss-supplied `(646) 979-9769` phone number is the intended replacement for the live site's
-   `(646) 718-6201` number.
-2. The $300 initial evaluation and $250 follow-up prices remain current if the reference packet has
+1. The $300 initial evaluation and $250 follow-up prices remain current if the reference packet has
    changed since 2026-08-14.
-3. `https://www.chaphysicaltherapy.com/privacy-policy` remains the canonical destination for both
+2. `https://www.chaphysicaltherapy.com/privacy-policy` remains the canonical destination for both
    legal labels.
-4. Every absolute production media URL used by the homepage loads the expected Cha asset.
+3. Every absolute production media URL used by the homepage loads the expected Cha asset.
 
 Failure to verify any item blocks release readiness but does not justify inventing replacement data.
