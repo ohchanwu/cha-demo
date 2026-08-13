@@ -25,7 +25,7 @@
   "url": "https://chaphysicaltherapy.com/",
   "logo": "https://chaphysicaltherapy.com/static/images/chaLogo/chaLogo_brown.png",
   "image": "https://chaphysicaltherapy.com/static/images/landing/landing_first_frame.jpg",
-  "telephone": "+1-212-643-9326",
+  "telephone": "+1-646-718-6201",
   "priceRange": "$$$",
   "address": {
     "@type": "PostalAddress",
@@ -82,11 +82,9 @@
 </head>
 <body>
 
-<div class="draft-badge">Preview &middot; v2</div>
-
-<nav class="nav">
-  <a href="./index.html" class="nav-logo"><img src="https://www.chaphysicaltherapy.com/static/cha-design/assets/cha-wordmark.png" alt="Cha Physical Therapy" /></a>
-  <ul class="nav-links">
+<nav class="nav" id="site-nav" aria-label="Primary navigation">
+  <a href="./index.html" class="nav-logo" aria-label="Cha Physical Therapy home"><img src="https://www.chaphysicaltherapy.com/static/cha-design/assets/cha-wordmark.png" alt="Cha Physical Therapy" /></a>
+  <ul class="nav-links" id="nav-links">
     <li><a href="./treatments.html">Treatments</a></li>
     <li><a href="./pain.html">Pain</a></li>
     <li><a href="./packages.html">Programs</a></li>
@@ -96,6 +94,7 @@
     <li><a href="./pricing.html">Pricing</a></li>
     <li><a href="./book.html" class="book-link">Book a session</a></li>
   </ul>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><span aria-hidden="true"></span></button>
 </nav>
 
 <main>
@@ -179,33 +178,25 @@
   <div class="rule"></div>
 
   <!-- END CTA -->
-  <section class="end">
-    <h2>Work with <em>Dr. Cha.</em></h2>
-    <p style="font-family:var(--font-sans);font-size:17px;font-weight:300;line-height:1.7;color:var(--ink-soft);max-width:46ch;margin-bottom:56px;">His caseload is small by design. If you want him from the first visit, say so when you book.</p>
-    <div class="end-meta">
-      <div class="end-meta-col">
-        <span class="k">Address</span>
-        <span class="v">16 W 32nd St, Suite 1007</span>
-        <span class="v">NoMad, New York 10001</span>
-      </div>
-      <div class="end-meta-col">
-        <span class="k">Hours</span>
-        <span class="v">Monday &ndash; Friday</span>
-        <span class="v">9am &ndash; 7pm</span>
-      </div>
-      <div class="end-meta-col">
-        <span class="k">Phone</span>
-        <span class="v">(212) 643-9326</span>
-      </div>
-    </div>
-    <a href="./book.html" class="end-btn">Book a session<svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-  </section>
+  <section class="end site-cta" aria-labelledby="site-cta-title">
+  <h2 id="site-cta-title">Start your care journey today.</h2>
+  <a href="./book.html" class="end-btn">Book a session <span aria-hidden="true">→</span></a>
+</section>
 
 </main>
 
 <footer>
   <span class="foot-wordmark">Cha Physical Therapy</span>
-  <span class="foot-legal">&copy; 2026 &middot; NoMad, New York &middot; Privacy &middot; HIPAA</span>
+  <div class="footer-contact">
+    <p><span class="footer-label">Address</span>16 W 32nd St, Suite 1007, NoMad, New York 10001</p>
+    <p><span class="footer-label">Hours</span>Monday-Friday, 9am-7pm</p>
+    <p><span class="footer-label">Phone</span><a href="tel:+16467186201">(646) 718-6201</a></p>
+  </div>
+  <div class="footer-legal">
+    <span>© 2026</span>
+    <a href="https://www.chaphysicaltherapy.com/privacy-policy" rel="external">Privacy</a>
+    <a href="https://www.chaphysicaltherapy.com/privacy-policy" rel="external">HIPAA</a>
+  </div>
 </footer>
 
 <script src="https://www.chaphysicaltherapy.com/static/cha-design/ive-animations.js"></script>

@@ -25,7 +25,7 @@
   "url": "https://chaphysicaltherapy.com/",
   "logo": "https://chaphysicaltherapy.com/static/images/chaLogo/chaLogo_brown.png",
   "image": "https://chaphysicaltherapy.com/static/images/landing/landing_first_frame.jpg",
-  "telephone": "+1-212-643-9326",
+  "telephone": "+1-646-718-6201",
   "priceRange": "$$$",
   "address": {
     "@type": "PostalAddress",
@@ -134,11 +134,9 @@
 </head>
 <body>
 
-<div class="draft-badge">Preview &middot; v2</div>
-
-<nav class="nav">
-  <a href="./index.html" class="nav-logo"><img src="https://www.chaphysicaltherapy.com/static/cha-design/assets/cha-wordmark.png" alt="Cha Physical Therapy" /></a>
-  <ul class="nav-links">
+<nav class="nav" id="site-nav" aria-label="Primary navigation">
+  <a href="./index.html" class="nav-logo" aria-label="Cha Physical Therapy home"><img src="https://www.chaphysicaltherapy.com/static/cha-design/assets/cha-wordmark.png" alt="Cha Physical Therapy" /></a>
+  <ul class="nav-links" id="nav-links">
     <li><a href="./treatments.html">Treatments</a></li>
     <li><a href="./pain.html">Pain</a></li>
     <li><a href="./packages.html">Programs</a></li>
@@ -148,6 +146,7 @@
     <li><a href="./pricing.html">Pricing</a></li>
     <li><a href="./book.html" class="book-link">Book a session</a></li>
   </ul>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><span aria-hidden="true"></span></button>
 </nav>
 
 <main>
@@ -168,9 +167,9 @@
     <div class="tx-copy">
       <p class="tx-tag">Founder &amp; Clinical Director</p>
       <h2>Dr. Deukyoung Cha</h2>
-      <p class="clinician-title">PT, DPT &middot; Founder &amp; Clinical Director</p>
+      <p class="clinician-title">PT, DPT. Schroth C2 (Level 2) certified, 2011.</p>
       <p>Nearly thirty years of clinical work in New York. Dr. Cha trained at Yonsei University in Seoul and earned his Doctor of Physical Therapy at Stony Brook University. He opened Cha Physical Therapy in 2008 in NoMad to do the kind of manual-first, full-hour care that large institutions had stopped offering.</p>
-      <p class="prose">Schroth C2 certified in 2011 through the Hunter College program. Trained in postural restoration, manual therapy, sports rehabilitation, and vestibular care. Licensed in New York since 1998.</p>
+      <p class="prose">Trained in postural restoration, manual therapy, sports rehabilitation, and vestibular care. Licensed in New York since 1998.</p>
       <a href="./dr-cha.html" class="tx-link">Full profile &rarr;</a>
     </div>
   </div>
@@ -219,35 +218,29 @@
 
   <div class="rule"></div>
 
-  <section class="end">
-      <h2>One method. <em>One standard.</em></h2>
-    <div class="end-meta">
-      <div class="end-meta-col">
-        <span class="k">Address</span>
-        <span class="v">16 W 32nd St, Suite 1007</span>
-        <span class="v">NoMad, New York 10001</span>
-      </div>
-      <div class="end-meta-col">
-        <span class="k">Hours</span>
-        <span class="v">Mon&ndash;Fri</span>
-        <span class="v">9am&ndash;7pm</span>
-      </div>
-      <div class="end-meta-col">
-        <span class="k">Phone</span>
-        <span class="v">(212) 643-9326</span>
-      </div>
-    </div>
-    <a href="./book.html" class="end-btn">
-      Book a session
-      <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-    </a>
+  <section class="section team-standard" aria-labelledby="team-standard-title">
+    <h2 id="team-standard-title">One method. <em>One standard.</em></h2>
   </section>
+
+  <section class="end site-cta" aria-labelledby="site-cta-title">
+  <h2 id="site-cta-title">Start your care journey today.</h2>
+  <a href="./book.html" class="end-btn">Book a session <span aria-hidden="true">→</span></a>
+</section>
 
 </main>
 
 <footer>
   <span class="foot-wordmark">Cha Physical Therapy</span>
-  <span class="foot-legal">&copy; 2026 &middot; NoMad, New York &middot; Privacy &middot; HIPAA</span>
+  <div class="footer-contact">
+    <p><span class="footer-label">Address</span>16 W 32nd St, Suite 1007, NoMad, New York 10001</p>
+    <p><span class="footer-label">Hours</span>Monday-Friday, 9am-7pm</p>
+    <p><span class="footer-label">Phone</span><a href="tel:+16467186201">(646) 718-6201</a></p>
+  </div>
+  <div class="footer-legal">
+    <span>© 2026</span>
+    <a href="https://www.chaphysicaltherapy.com/privacy-policy" rel="external">Privacy</a>
+    <a href="https://www.chaphysicaltherapy.com/privacy-policy" rel="external">HIPAA</a>
+  </div>
 </footer>
 
 <script src="https://www.chaphysicaltherapy.com/static/cha-design/ive-animations.js"></script>

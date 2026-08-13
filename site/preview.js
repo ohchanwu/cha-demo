@@ -1,4 +1,6 @@
 (() => {
+  document.documentElement.classList.add("media-fade-enabled");
+
   const pages = new Set([
     "about", "acupuncture", "book", "botox", "dr-cha", "elbow-pain",
     "hip-pain", "hypermobility", "in-person-care", "knee-pain",
@@ -73,6 +75,62 @@
   document.querySelectorAll(".nav-links a[href]").forEach((link) => {
     const targetSlug = new URL(link.href).pathname.split("/").pop().replace(/\.html$/, "");
     if (targetSlug === currentSlug) link.setAttribute("aria-current", "page");
+  });
+
+  const nav = document.querySelector(".nav");
+  const menuToggle = nav?.querySelector(".menu-toggle");
+  const navLinks = nav?.querySelector(".nav-links");
+
+  const setMenuOpen = (open) => {
+    if (!nav || !menuToggle) return;
+    nav.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", `${open ? "Close" : "Open"} navigation`);
+  };
+
+  menuToggle?.addEventListener("click", () => setMenuOpen(!nav.classList.contains("is-open")));
+  navLinks?.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setMenuOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && nav?.classList.contains("is-open")) {
+      setMenuOpen(false);
+      menuToggle.focus();
+    }
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 880) setMenuOpen(false);
+  });
+
+  const revealMedia = (media, isError = false) => {
+    media.classList.toggle("is-media-error", isError);
+    media.classList.add("is-media-loaded");
+  };
+
+  document.querySelectorAll("main img").forEach((image) => {
+    const revealDecoded = () => {
+      if (typeof image.decode !== "function") {
+        revealMedia(image);
+        return;
+      }
+      image.decode().then(() => revealMedia(image), () => revealMedia(image));
+    };
+
+    if (image.complete) {
+      if (image.naturalWidth > 0) revealDecoded();
+      else revealMedia(image, true);
+      return;
+    }
+
+    image.addEventListener("load", revealDecoded, { once: true });
+    image.addEventListener("error", () => revealMedia(image, true), { once: true });
+  });
+
+  document.querySelectorAll("main video").forEach((video) => {
+    if (video.readyState >= 2) revealMedia(video);
+    else video.addEventListener("loadeddata", () => revealMedia(video), { once: true });
+    video.addEventListener("error", () => revealMedia(video, true), { once: true });
   });
 
   document.querySelectorAll("form").forEach((form) => {
