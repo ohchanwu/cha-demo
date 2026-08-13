@@ -927,10 +927,6 @@ body.nav-open {
     width: 150px;
   }
 
-  .nav-toggle {
-    display: block !important;
-  }
-
   .nav-links {
     top: 74px !important;
     right: 0 !important;

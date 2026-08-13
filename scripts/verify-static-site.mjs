@@ -87,6 +87,10 @@ for (const file of htmlFiles) {
 
   if (!/href=["'](?:\.\/)?preview\.css["']/i.test(html)) fail(file, "missing preview.css");
   if (!/src=["'](?:\.\/)?preview\.js["']/i.test(html)) fail(file, "missing preview.js");
+  const legacyScripts = [...html.matchAll(/<script\b[^>]*src=["']([^"']+)["'][^>]*>/gi)]
+    .map((match) => match[1])
+    .filter((source) => !/(?:^|\/)preview\.js(?:[?#]|$)/i.test(source));
+  if (legacyScripts.length) fail(file, `legacy production scripts must be removed: ${legacyScripts.join(", ")}`);
   if (!/<nav\b[^>]*aria-label=["']Primary navigation["']/i.test(html)) fail(file, "missing primary navigation");
   if (!/<button\b[^>]*class=["'][^"']*menu-toggle/i.test(html)) fail(file, "missing mobile menu button");
   if (!/<footer\b/i.test(html)) fail(file, "missing footer element");
@@ -164,6 +168,9 @@ for (const heading of homeSequence) {
   previousHomeSection = Math.max(previousHomeSection, position);
 }
 for (const person of ["Vien Le Wood", "Nicolas Eccles", "Bruna Amajones"]) requiredText(indexFile, index, person);
+if (!/href=["']https:\/\/www\.google\.com\/search\?q=Cha\+Physical\+Therapy\+16\+W\+32nd\+St\+New\+York\+reviews["']/i.test(index)) {
+  fail(indexFile, "homepage review summary must use the identity-specific live Google destination");
+}
 
 const pageTextChecks = new Map([
   ["about.html", ["PT, DPT. Schroth C2 (Level 2) certified, 2011.", "One method. One standard."]],
