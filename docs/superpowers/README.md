@@ -2,7 +2,7 @@
 
 ## Active plans
 
-- [Cha site reference refresh](./plans/260814-cha-site-reference-refresh-implementation.md)
+None.
 
 ## Specifications
 
@@ -10,4 +10,4 @@
 
 ## Archive
 
-Completed implementation records move to [`archive/`](./archive/).
+- [Completed Cha site reference refresh](./archive/260814-cha-site-reference-refresh-implementation.md)
