@@ -307,7 +307,7 @@ h3 em,
   min-height: 100%;
   display: block;
   object-fit: cover !important;
-  object-position: center center;
+  object-position: 0 center;
   transform: none;
 }
 
