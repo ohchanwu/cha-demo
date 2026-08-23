@@ -8,6 +8,7 @@
   --preview-sage: #6b7a5a;
   --preview-clay: #b8826b;
   --preview-clay-dark: #8e5c42;
+  --cha-bright-500: #d85a33;
   --preview-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --bone: var(--preview-white);
@@ -161,6 +162,15 @@ h3 em,
 .nav-links .book-link:hover {
   background: var(--preview-clay-dark) !important;
   border-color: var(--preview-clay-dark) !important;
+}
+
+.nav-links .book-link:link,
+.nav-links .book-link:visited,
+.nav-links .book-link:hover,
+.nav-links .book-link:focus-visible,
+.nav-links .book-link:active,
+.nav-links .book-link[aria-current="page"] {
+  color: var(--preview-white) !important;
 }
 
 .page-hero {
@@ -779,10 +789,27 @@ body.nav-open {
 }
 
 .foot-wordmark {
+  width: 170px;
+  display: block;
   color: #000000 !important;
   font-family: var(--preview-font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.02em !important;
+}
+
+.foot-wordmark img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.accent-copy {
+  color: var(--cha-bright-500) !important;
+}
+
+.treatments-word-gap {
+  margin-left: 0.08em;
+  display: inline-block;
 }
 
 .preview-form-note {
@@ -1207,7 +1234,7 @@ body.nav-open {
   display: grid;
   align-content: space-between;
   gap: 64px;
-  background: var(--preview-clay);
+  background: color-mix(in srgb, var(--preview-clay) 52%, var(--preview-white));
   color: var(--preview-ink);
 }
 
@@ -1273,7 +1300,7 @@ body.nav-open {
 .home-stats strong {
   display: block;
   margin-bottom: 64px;
-  color: var(--preview-clay-dark);
+  color: var(--cha-bright-500);
   font-size: clamp(36px, 5vw, 76px);
   letter-spacing: -0.05em;
 }
@@ -1290,13 +1317,6 @@ body.nav-open {
   background: var(--preview-ink);
 }
 
-.home-space::after {
-  position: absolute;
-  inset: 0;
-  background: rgba(18, 18, 18, 0.28);
-  content: "";
-}
-
 .home-space video {
   width: 100%;
   height: 100%;
@@ -1307,11 +1327,14 @@ body.nav-open {
 
 .home-space-copy {
   position: absolute;
-  right: 5vw;
-  bottom: 7vw;
-  left: 5vw;
+  inset: 0;
   z-index: 1;
+  padding: 5vw;
+  display: grid;
+  place-content: center;
+  justify-items: center;
   color: var(--preview-white);
+  text-align: center;
 }
 
 .home-space h2 {
@@ -1592,5 +1615,17 @@ body.nav-open {
 
   .home-program-copy {
     padding: 52px 24px 70px;
+  }
+}
+
+@media (max-width: 880px) {
+  .nav-links .book-link {
+    margin-top: 14px;
+    padding: 14px 20px !important;
+    border: 1px solid var(--preview-ink) !important;
+    border-radius: 999px !important;
+    background: var(--preview-ink) !important;
+    color: var(--preview-white) !important;
+    text-align: center;
   }
 }
