@@ -310,6 +310,12 @@ h3 em,
   overflow: hidden;
 }
 
+.schroth-hero-img picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .schroth-hero-img img {
   width: 100% !important;
   height: 100% !important;
@@ -582,6 +588,13 @@ main > .section-centered:nth-of-type(3n) > .two-col {
 .pricing-item {
   padding-left: clamp(24px, 4vw, 56px) !important;
   padding-right: clamp(24px, 4vw, 56px) !important;
+}
+
+.pricing-disclaimer {
+  margin: 18px 0 0;
+  color: var(--preview-ink-soft);
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 /* The numbered program labels are hidden, so the content needs to replace

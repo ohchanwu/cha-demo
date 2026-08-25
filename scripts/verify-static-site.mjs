@@ -216,6 +216,22 @@ for (const [name, texts] of pageTextChecks) {
   const html = readFileSync(file, "utf8");
   for (const text of texts) requiredText(file, html, text);
 }
+
+const schrothFile = resolve(site, "schroth.html");
+const schrothHtml = readFileSync(schrothFile, "utf8");
+if (!/<picture>[\s\S]*?<source\s+media=["']\(min-width:\s*881px\)["']\s+srcset=["']\.\/schroth-hero-desktop\.jpg["']\s*\/>[\s\S]*?<img\s+src=["']\.\/schroth-hero\.jpg["']/i.test(schrothHtml)) {
+  fail(schrothFile, "desktop Schroth hero must use the cropped asset while mobile keeps the original");
+}
+const schrothDesktopHero = resolve(site, "schroth-hero-desktop.jpg");
+if (!existsSync(schrothDesktopHero) || statSync(schrothDesktopHero).size === 0) {
+  fail(schrothDesktopHero, "missing cropped desktop Schroth hero");
+}
+
+const pricingFile = resolve(site, "pricing.html");
+const pricingHtml = readFileSync(pricingFile, "utf8");
+if (!/<section\s+class=["']section["']>[\s\S]*?<ul\s+class=["']pricing-list["'][\s\S]*?<\/ul>\s*<p\s+class=["']pricing-disclaimer["']>Pelvic floor initial eval is 55 minutes and follow up is 50 minutes<\/p>\s*<\/section>/i.test(pricingHtml)) {
+  fail(pricingFile, "first pricing section must end with the pelvic-floor timing disclaimer");
+}
 for (const name of ["about.html", "schroth.html", "scoliosis.html"]) {
   const file = resolve(site, name);
   if (/Hunter College/i.test(readFileSync(file, "utf8"))) fail(file, "Hunter College reference must be removed");
