@@ -229,7 +229,7 @@ if (!existsSync(schrothDesktopHero) || statSync(schrothDesktopHero).size === 0) 
 
 const pricingFile = resolve(site, "pricing.html");
 const pricingHtml = readFileSync(pricingFile, "utf8");
-if (!/<section\s+class=["']section["']>[\s\S]*?<ul\s+class=["']pricing-list["'][\s\S]*?<\/ul>\s*<p\s+class=["']pricing-disclaimer["']>Pelvic floor initial eval is 55 minutes and follow up is 50 minutes<\/p>\s*<\/section>/i.test(pricingHtml)) {
+if (!/<section\s+class=["']section["']>[\s\S]*?<ul\s+class=["']pricing-list["'][\s\S]*?<\/ul>\s*<p\s+class=["']pricing-disclaimer["']>Pelvic floor initial eval is 55 minutes, and follow up is 50 minutes<\/p>\s*<\/section>/i.test(pricingHtml)) {
   fail(pricingFile, "first pricing section must end with the pelvic-floor timing disclaimer");
 }
 for (const name of ["about.html", "schroth.html", "scoliosis.html"]) {
@@ -280,6 +280,9 @@ if (!existsSync(resolve(site, "assets", "favicon.ico"))) fail(resolve(site, "ass
 
 const cssFile = resolve(site, "preview.css");
 const css = readFileSync(cssFile, "utf8");
+if (!/\.pricing-disclaimer\s*{[^}]*font-size\s*:\s*16px/is.test(css)) {
+  fail(cssFile, "pricing disclaimer must use a 16px font size");
+}
 if (!/footer\s*{[^}]*background(?:-color)?\s*:\s*var\(--preview-white\)/is.test(css)) {
   fail(cssFile, "shared footer must use --preview-white");
 }
