@@ -287,20 +287,20 @@ if (!/footer\s*{[^}]*background(?:-color)?\s*:\s*var\(--preview-white\)/is.test(
   fail(cssFile, "shared footer must use --preview-white");
 }
 if (/--cha-bright-500/i.test(css)) {
-  fail(cssFile, "off-palette accent must stay removed; production uses --preview-clay-dark");
+  fail(cssFile, "off-palette accent must stay removed; accents run through the clay tokens");
 }
 if (!/\.home-method-panel\s*{[^}]*background\s*:\s*color-mix\([^}]*var\(--preview-clay\)/is.test(css)) {
   fail(cssFile, "homepage method panel must use a brighter, lighter clay background");
 }
-if (!/\.home-stats strong\s*{[^}]*color\s*:\s*var\(--preview-clay-dark\)/is.test(css)) {
-  fail(cssFile, "homepage metrics must use the production emphasis color");
+if (!/\.home-stats strong\s*{[^}]*color\s*:\s*var\(--preview-clay\)/is.test(css)) {
+  fail(cssFile, "homepage metrics must use the shared clay accent");
 }
 if (/\.home-space::after\s*{/i.test(css)) fail(cssFile, "homepage treatment video overlay must be removed");
 if (!/\.home-space-copy\s*{[^}]*inset\s*:\s*0[^}]*display\s*:\s*grid[^}]*place-content\s*:\s*center/is.test(css)) {
   fail(cssFile, "homepage treatment video heading must be centered in both axes");
 }
-if (!/\.accent-copy\s*{[^}]*color\s*:\s*var\(--preview-clay-dark\)/is.test(css)) {
-  fail(cssFile, "shared accent-copy class must use the production emphasis color");
+if (!/\.accent-copy\s*{[^}]*color\s*:\s*var\(--preview-clay\)/is.test(css)) {
+  fail(cssFile, "shared accent-copy class must use the shared clay accent");
 }
 if (!/\.nav-links \.book-link(?:[^}]|\n)*\[aria-current=["']page["']\][^{]*{[^}]*color\s*:\s*var\(--preview-white\)/is.test(css)) {
   fail(cssFile, "Book a session label must stay white in every route and interaction state");

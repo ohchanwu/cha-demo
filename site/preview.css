@@ -6,7 +6,7 @@
   --preview-ink-soft: #7a706a;
   --preview-line: #e7e3de;
   --preview-sage: #6b7a5a;
-  --preview-clay: #b8826b;
+  --preview-clay: #d49378;
   --preview-clay-dark: #8e5c42;
   --preview-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -812,7 +812,7 @@ body.nav-open {
 }
 
 .accent-copy {
-  color: var(--preview-clay-dark) !important;
+  color: var(--preview-clay) !important;
 }
 
 .treatments-word-gap {
@@ -1308,7 +1308,7 @@ body.nav-open {
 .home-stats strong {
   display: block;
   margin-bottom: 64px;
-  color: var(--preview-clay-dark);
+  color: var(--preview-clay);
   font-size: clamp(36px, 5vw, 76px);
   letter-spacing: -0.05em;
 }
