@@ -8,7 +8,6 @@
   --preview-sage: #6b7a5a;
   --preview-clay: #b8826b;
   --preview-clay-dark: #8e5c42;
-  --cha-bright-500: #d85a33;
   --preview-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --bone: var(--preview-white);
@@ -656,10 +655,6 @@ main > .section-centered:nth-of-type(3n) > .two-col {
   line-height: 0.94 !important;
 }
 
-.end h2 em.accent-copy {
-  color: var(--preview-clay) !important;
-}
-
 .end .k {
   opacity: 0.58;
 }
@@ -817,7 +812,7 @@ body.nav-open {
 }
 
 .accent-copy {
-  color: var(--cha-bright-500) !important;
+  color: var(--preview-clay-dark) !important;
 }
 
 .treatments-word-gap {
@@ -1313,7 +1308,7 @@ body.nav-open {
 .home-stats strong {
   display: block;
   margin-bottom: 64px;
-  color: var(--cha-bright-500);
+  color: var(--preview-clay-dark);
   font-size: clamp(36px, 5vw, 76px);
   letter-spacing: -0.05em;
 }
