@@ -286,19 +286,21 @@ if (!/\.pricing-disclaimer\s*{[^}]*font-size\s*:\s*16px/is.test(css)) {
 if (!/footer\s*{[^}]*background(?:-color)?\s*:\s*var\(--preview-white\)/is.test(css)) {
   fail(cssFile, "shared footer must use --preview-white");
 }
-if (!/--cha-bright-500\s*:\s*#d85a33/i.test(css)) fail(cssFile, "missing full-strength Volcano token");
+if (/--cha-bright-500/i.test(css)) {
+  fail(cssFile, "off-palette accent must stay removed; production uses --preview-clay-dark");
+}
 if (!/\.home-method-panel\s*{[^}]*background\s*:\s*color-mix\([^}]*var\(--preview-clay\)/is.test(css)) {
   fail(cssFile, "homepage method panel must use a brighter, lighter clay background");
 }
-if (!/\.home-stats strong\s*{[^}]*color\s*:\s*var\(--cha-bright-500\)/is.test(css)) {
-  fail(cssFile, "homepage metrics must use the full-strength Volcano token");
+if (!/\.home-stats strong\s*{[^}]*color\s*:\s*var\(--preview-clay-dark\)/is.test(css)) {
+  fail(cssFile, "homepage metrics must use the production emphasis color");
 }
 if (/\.home-space::after\s*{/i.test(css)) fail(cssFile, "homepage treatment video overlay must be removed");
 if (!/\.home-space-copy\s*{[^}]*inset\s*:\s*0[^}]*display\s*:\s*grid[^}]*place-content\s*:\s*center/is.test(css)) {
   fail(cssFile, "homepage treatment video heading must be centered in both axes");
 }
-if (!/\.accent-copy\s*{[^}]*color\s*:\s*var\(--cha-bright-500\)/is.test(css)) {
-  fail(cssFile, "shared accent-copy class must use the Volcano token");
+if (!/\.accent-copy\s*{[^}]*color\s*:\s*var\(--preview-clay-dark\)/is.test(css)) {
+  fail(cssFile, "shared accent-copy class must use the production emphasis color");
 }
 if (!/\.nav-links \.book-link(?:[^}]|\n)*\[aria-current=["']page["']\][^{]*{[^}]*color\s*:\s*var\(--preview-white\)/is.test(css)) {
   fail(cssFile, "Book a session label must stay white in every route and interaction state");
