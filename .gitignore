@@ -3,3 +3,8 @@
 
 # Bulk review-screenshot bundles: large, and they duplicate pages on the live site.
 docs/superpowers/**/*-screenshots.zip
+
+# Review screenshots: raw captures include unrelated browser chrome (other clients' bookmarks,
+# calendar and meeting details). The specs cite measured values instead.
+docs/superpowers/**/ui-screenshot-*.png
+docs/superpowers/**/chat-screenshot.png
