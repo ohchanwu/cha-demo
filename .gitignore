@@ -1,2 +1,5 @@
 .DS_Store
 .gstack/
+
+# Bulk review-screenshot bundles: large, and they duplicate pages on the live site.
+docs/superpowers/**/*-screenshots.zip
