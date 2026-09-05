@@ -2,5 +2,5 @@
 
 - [Tracked implementation knowledge](./superpowers/README.md)
 
-Specifications live under `superpowers/specs/`. Completed implementation records live under
-`superpowers/archive/`; see that directory's `AGENTS.md` before reading it.
+Active specifications live under `superpowers/specs/`. Completed work moves to
+`superpowers/archive/`; read that directory's `AGENTS.md` before opening anything in it.
